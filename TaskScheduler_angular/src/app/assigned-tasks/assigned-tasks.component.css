@@ -1,0 +1,38 @@
+  /* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row{
+	margin-left: 70px;
+}
+
+#left{
+	float: left;
+}
+
+#right{
+	float: right;
+}
+
+#heading{
+	font-family: "Times New Roman", Times, serif;
+	font-size: 30px;
+}
+
+.well{
+	padding-top: 0px;
+	padding-left: 19px;
+	padding-right: 19px;
+	padding-bottom: 35px;
+}

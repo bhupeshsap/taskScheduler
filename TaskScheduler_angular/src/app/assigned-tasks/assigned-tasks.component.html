@@ -1,0 +1,22 @@
+<button class="btn btn-success" [routerLink]="['assignTaskAdd']">Assign a new task</button>
+<div class="row col-sm-11">
+  <div class="column col1"> 
+  <h2>Tasks List</h2>
+    <div class="well" *ngFor="let task of taskData">
+      <p id="heading">{{task.subject}}</p>
+      <div id="left">
+        <h5><i>assigned to : {{task.userName}} </i></h5>
+        <h5><i>status: {{task.status}} </i></h5>
+      </div>
+      <div id="right">
+        <h5><i>created date: {{task.created_date}}</i></h5>
+        <h5><i>target Date : {{task.target_date}}</i></h5>
+      </div>
+       <a  [routerLink]="['assignedView',task.id]">view</a>
+    </div>
+  </div>
+  <div class="column col2"> 
+      <router-outlet></router-outlet>
+  </div>
+
+</div>  

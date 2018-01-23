@@ -1,0 +1,32 @@
+<h3><i>Login Form</i></h3>
+
+<form class="col-sm-6 well" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate >
+
+  <div class="form-group">
+    <label class="center-block">Username</label>
+    <input class="form-control" formControlName="name">
+  </div>
+
+   <!-- errors -->
+  <div *ngIf="loginForm.controls.name.errors && (loginForm.controls.name.touched || loginForm.controls.name.dirty)">
+    <div [hidden]="!loginForm.controls.name.errors.required" >
+       <p> Must not be empty</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="center-block">Password</label>
+    <input type="password" class="form-control" formControlName="password">
+  </div>
+
+  <!-- errors -->
+  <div *ngIf="loginForm.controls.password.errors && (loginForm.controls.password.touched || loginForm.controls.password.dirty)">
+    <div [hidden]="!loginForm.controls.password.errors.required" >
+       <p> Must not be empty</p>
+    </div>
+  </div>
+
+  <button class="btn btn-success" type="submit" [disabled]="!loginForm.valid">submit</button> 
+
+  <a class="btn btn-success" [routerLink]="['/registration']">Register Your self</a>
+</form>

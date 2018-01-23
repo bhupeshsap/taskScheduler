@@ -1,0 +1,20 @@
+<div class="row col-sm-11">
+  <div class="column col1"> 
+  <h2>Tasks List</h2>
+   <div class="well" *ngFor="let task of taskData">
+      <p id="heading">{{task.subject}}</p>
+      <div id="left">
+        <h5><i>status: {{task.status}} </i></h5>
+        <button class="btn btn-success" [routerLink]="['edit',task.id]">edit</button>
+      </div>
+      <div id="right">
+        <h5><i>created date: {{task.created_date}}</i></h5>
+        <h5><i>target Date : {{task.target_date}}</i></h5>
+      </div>      
+    </div>
+  </div>
+  <div class="column col2"> 
+    <router-outlet></router-outlet>
+  </div>
+
+</div>  
